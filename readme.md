@@ -1,4 +1,4 @@
-# 系统性能基准评估 (System performance benchmark evaluation)
+# 系统性能基准评估 `SPBE` (system performance benchmark evaluation)
 
 ## 目的
 > [info] 本项目旨在建立一个性能基准评估的方案，来测试硬件性能，数据性能等。
