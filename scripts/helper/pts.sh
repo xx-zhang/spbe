@@ -1,9 +1,9 @@
 #!/bin/bash
 # 20210722 generate add fio/netmask/mem
-# 20210711 create by xx_zhang
+# 20210711 create by lym
 # shellcheck disable=SC1073
 
-RESULT_ROOT=/topsec-pts/
+RESULT_ROOT=/topsec_data/
 RESULT_PATH=${RESULT_ROOT}/$(date +%Y%m%d%H)
 
 if [ -z $1 ]; then
@@ -56,24 +56,22 @@ export TEST_MEM_SYSBENCH=${RESULT_PATH}/pgsql/sysbench_pgsql
 ## TODO 记录 elasticserach 性能
 export TEST_ES_RALLY=${RESULT_PATH}/es/rally
 
+function check_parent_dir_exist()
+{
+  echo '检查'
 
+}
+
+function exec_shell()
+{
+
+}
 
 MY_CPU_COUNT=$(grep -c processor /proc/cpuinfo)
 
-function check_deps
+function test_cpu_sysbench
 {
-  echo 'EVERYTHING IS OK'
-}
-
-function sys_info
-{
-  echo
-
-}
-
-function cpu_sysbench
-{
-
+   echo $(sysbench cpu --cpu-max-prime=20000 --threads=1 run)  >>  $TEST_CPU_SYSBENCH
 }
 
 function mem_sysbench
@@ -105,25 +103,18 @@ function cpu_unixbench
 }
 
 
+funcion run (){
+  ## RUN
+
+
+}
+
+
 
 case "$1" in
-"start")
-  start
+"run")
+  run
   ;;
-"restart")
-  restart
-  ;;
-"stop")
-  stop
-  ;;
-"version")
-  version
-  ;;
-"status")
-  status
-  ;;
-"waf")
-  waf
   ;;
 *)
   echo "usage:(start|stop|restart|status|version|waf)"

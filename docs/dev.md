@@ -136,8 +136,8 @@ echo_code end
 ```bash 
 sockperf server & 
 
-sockper ping-pong 
-sockper throughput
-sockper under-load 
+sockperf  ping-pong   
+sockperf  throughput 
+sockperf  under-load  
 
 ```
